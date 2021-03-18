@@ -167,7 +167,7 @@ resource "aws_autoscaling_group" "web" {
   min_size             = 1
   desired_capacity     = 1
   max_size             = 2
-  
+  health_check_grace_period = 60
   health_check_type    = "ELB"
   load_balancers = [
   aws_elb.web_elb.id
